@@ -1,0 +1,27 @@
+// Autómata del Analizador Léxico de Andromeda
+digraph {
+	A [label=Inicio]
+	B [label="Identificador/Palabra Reservada"]
+	C [label="Número"]
+	D [label=Cadena]
+	E [label=Operador]
+	F [label="Comentario de Línea"]
+	G [label="Comentario de Bloque"]
+	H [label=Espacio]
+	A -> B [label=letra]
+	B -> B [label="letra | dígito | _"]
+	A -> C [label="dígito"]
+	C -> C [label="dígito"]
+	C -> C [label="."]
+	A -> D [label="\""]
+	D -> D [label="cualquier cosa excepto \" no escapada"]
+	D -> A [label="\""]
+	A -> E [label=operador]
+	A -> F [label="//"]
+	F -> F [label="todo hasta 
+"]
+	A -> G [label="/*"]
+	G -> G [label="todo hasta */"]
+	A -> H [label=espacio]
+	H -> A [label="no espacio"]
+}

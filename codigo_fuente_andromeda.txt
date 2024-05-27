@@ -1,0 +1,10 @@
+galaxia andromeda {
+    estrella x = 10;
+    estrella y = 20;
+    viaje (i = 0; i < 5; i++) {
+        espacio.print("Hola, galaxia!"); // Comentario de línea
+    }
+    /*
+    Comentario de bloque
+    */
+}
